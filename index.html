@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23B5352B'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='42' fill='white'%3E七%3C/text%3E%3C/svg%3E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>《集七宝》——七宝古镇烟火气互动 H5</title>
+  <meta name="description" content="千年古镇，一日烟火。走访七宝老街7个最具烟火气的点位，重集属于当下的市井温度，生成你的专属双语集章卡！" />
+  <meta property="og:title" content="《集七宝》——七宝古镇烟火气互动 H5" />
+  <meta property="og:description" content="千年古镇，一日烟火。重集七宝，记录闵行美好！" />
+  <meta property="og:type" content="website" />
+  <script type="module" crossorigin src="./assets/index-B8uj5HBk.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BaHM_b_S.css">
+</head>
+<body>
+  <div id="app-viewport-wrapper">
+    <!-- Desktop Viewport Size Switcher (>= 768px) -->
+    <div class="desktop-view-switcher">
+      <button id="btn-view-mobile" class="view-switch-btn active" title="手机竖屏标准比例">📱 手机尺寸</button>
+      <button id="btn-view-desktop" class="view-switch-btn" title="电脑大屏舒展视野">🖥️ 桌面大屏</button>
+    </div>
+
+    <!-- Phone / Screen Container -->
+    <div id="desktop-phone-frame">
+      <main id="app">
+        <!-- Top Persistent Floating Navigation Bar -->
+        <header class="top-nav" id="global-top-nav">
+          <div class="top-nav-group" id="nav-left-group">
+            <div class="pill-btn" id="hub-progress-badge" style="visibility: hidden;">已集 0/7 宝</div>
+          </div>
+          <div class="top-nav-group" id="nav-right-group">
+            <button class="pill-btn lang-toggle-btn" id="btn-toggle-lang">EN</button>
+            <button class="icon-btn mute-toggle-btn" id="btn-toggle-mute" aria-label="声音开关">
+              <span id="mute-icon-symbol">🔇</span>
+            </button>
+            <button class="icon-btn" id="btn-open-info" aria-label="关于与信息">
+              <span>ℹ️</span>
+            </button>
+          </div>
+        </header>
+
+        <!-- S0: Loading Screen -->
+        <section class="screen active" id="screen-loading">
+          <div class="loading-seal-box">七</div>
+          <h1 class="loading-title" data-i18n="appTitle">集七宝</h1>
+          <p class="loading-subtitle" data-i18n="appSubtitle">千年古镇，一日烟火</p>
+          <div class="loading-progress-wrap" aria-label="加载进度">
+            <div class="loading-progress-track">
+              <div class="loading-progress-bar" id="loading-progress-bar"></div>
+            </div>
+            <span class="loading-progress-num" id="loading-progress-num">0%</span>
+          </div>
+          <p class="loading-text" id="loading-text-desc" data-i18n="loading">
+            正在煮水沏茶，开启老街画卷...
+          </p>
+          <button class="btn-enter-app" id="btn-enter-app" data-i18n="enter">
+            进入老街
+          </button>
+        </section>
+
+        <!-- S1: Cover Screen -->
+        <section class="screen" id="screen-cover">
+          <!-- Real Twilight Photograph Background with WebP + JPEG Fallback -->
+          <div class="cover-photo-wrap">
+            <picture>
+              <source srcset="assets/img/cover.webp" type="image/webp" />
+              <img src="assets/img/cover.jpg" alt="七宝老街黄昏全景" class="cover-photo-img" />
+            </picture>
+            <div class="cover-photo-vignette"></div>
+          </div>
+
+          <div class="cover-header">
+            <span class="cover-badge" data-i18n="posterBadge">烟火闵行 · 七宝古镇</span>
+            <h2 class="cover-title" data-i18n="appTitle">集七宝</h2>
+            <p class="cover-subtitle" data-i18n="appSubtitle">千年古镇，一日烟火</p>
+          </div>
+
+          <div class="cover-center-seal">
+            <div class="lantern-orb">宝</div>
+          </div>
+
+          <div class="cover-footer">
+            <button class="btn-primary-big" id="btn-start-journey" data-i18n="start">
+              开始寻宝
+            </button>
+          </div>
+        </section>
+
+        <!-- S2: Legend Story Cards -->
+        <section class="screen" id="screen-legend">
+          <div class="legend-top-bar">
+            <span class="legend-screen-heading" data-i18n="legendTitle">七宝传说</span>
+            <button class="pill-btn legend-skip-btn" id="legend-skip-btn" data-i18n="legendSkip">跳过传说</button>
+          </div>
+
+          <div class="legend-card-container" id="legend-cards-wrapper">
+            <!-- Dynamically populated by s2-legend.js -->
+          </div>
+
+          <div class="legend-nav">
+            <button class="pill-btn" id="legend-prev-btn" style="visibility: hidden;" data-i18n="legendPrev">上一页</button>
+            <div class="legend-dots">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <button class="pill-btn" id="legend-next-btn" data-i18n="legendNext">下一页</button>
+          </div>
+        </section>
+
+        <!-- S3: Hub (SVG Map Screen) -->
+        <section class="screen" id="screen-hub">
+          <div class="map-container">
+            <div id="map-svg-container">
+              <!-- Pure Vector SVG Map with Pinpoint Hotspots -->
+            </div>
+            <!-- Mandatory Schematic Notice in Map Corner -->
+            <div class="map-schematic-label" data-i18n="mapSchematic">示意图 · 不按比例</div>
+
+            <!-- First-Time Gesture Guide Banner -->
+            <div class="hub-first-guide" id="hub-first-guide" style="display: none;">
+              <span class="hub-guide-icon">👆</span>
+              <p class="hub-guide-body" data-i18n="mapGuideText">
+                首次漫步提示：轻触地图上的「宝」字印章探访老街点位，集满 3 处即可生成集章海报。
+              </p>
+              <button class="hub-guide-close-btn" id="btn-close-hub-guide" data-i18n="mapGuideGotIt">知道了</button>
+            </div>
+          </div>
+
+          <!-- Bottom Bar on Hub -->
+          <div class="hub-bottom-bar">
+            <p class="hub-hint-text" data-i18n="mapHint">轻触老街上的印章，探访水乡烟火</p>
+            <button class="btn-generate-poster" id="btn-hub-generate-poster" data-i18n="generatePoster">
+              生成集章卡
+            </button>
+          </div>
+        </section>
+
+        <!-- S4: Spot Detail Bottom Sheet Drawer (Overlays Hub) -->
+        <div class="bottom-sheet-backdrop" id="bottom-sheet-backdrop"></div>
+        <div class="bottom-sheet" id="spot-bottom-sheet">
+          <div class="sheet-drag-handle" id="sheet-drag-handle"></div>
+          <div class="sheet-scroll-content" id="spot-sheet-dynamic-content">
+            <!-- Dynamically populated by s4-spot.js -->
+          </div>
+        </div>
+
+        <!-- S5: Poster Screen -->
+        <section class="screen" id="screen-poster">
+          <div class="poster-preview-card" id="poster-image-target">
+            <!-- Canvas Generated Image -->
+          </div>
+          <p class="poster-save-tip" data-i18n="posterSaveHint">
+            长按上方图片保存海报至手机相册
+          </p>
+          <a class="pill-btn poster-download" id="btn-poster-download" download="qibao-stamp-card.png" data-i18n="posterDownload">下载海报</a>
+          <div class="poster-actions-row">
+            <button class="pill-btn" id="btn-poster-reset" style="color: var(--vermilion);" data-i18n="infoResetProgress">重置集章进度</button>
+            <button class="btn-primary-big" id="btn-poster-back" style="flex: 1; height: 46px; font-size: 15px;" data-i18n="posterBack">返回老街</button>
+          </div>
+        </section>
+
+        <!-- S6: Info & Credits Screen -->
+        <section class="screen" id="screen-info">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+            <h2 style="font-family: var(--font-serif); font-size: 22px;" data-i18n="infoTitle">关于老街与本作品</h2>
+            <button class="icon-btn" id="btn-close-info" data-i18n-title="close" aria-label="关闭">✕</button>
+          </div>
+
+          <div class="info-section">
+            <h3 class="info-section-title" data-i18n="infoTransitTitle">交通指引</h3>
+            <p class="info-section-body" data-i18n="infoTransitBody">
+              乘坐上海轨道交通 9 号线至七宝站，出站步行约 8–10 分钟即可抵达七宝老街牌坊。
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3 class="info-section-title" data-i18n="infoTicketsTitle">开放时间与票价</h3>
+            <p class="info-section-body" data-i18n="infoTicketsBody">
+              七宝古镇街区全天免费开放；内部展馆通常于 9:00 至 17:00 开放，部分展馆收费，以景区现场公示为准。
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3 class="info-section-title" data-i18n="infoTipsTitle">游览小贴士</h3>
+            <p class="info-section-body" data-i18n="infoTipsBody">
+              老街南北大街巷道较窄，节假日游客较多，建议错峰出行；南大街餐饮茶点集中，临河石板路行走请注意防滑。
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3 class="info-section-title" data-i18n="infoSightsTitle">老街其他文化看点</h3>
+            <div class="sheet-tags-row" style="margin-top: 10px; margin-bottom: 0;">
+              <span class="sheet-tag" data-i18n="sight1">张充仁纪念馆</span>
+              <span class="sheet-tag" data-i18n="sight2">棉织坊</span>
+              <span class="sheet-tag" data-i18n="sight3">七宝老行当</span>
+              <span class="sheet-tag" data-i18n="sight4">七宝老酒坊</span>
+              <span class="sheet-tag" data-i18n="sight5">老当铺</span>
+              <span class="sheet-tag" data-i18n="sight6">蟋蟀草堂</span>
+              <span class="sheet-tag" data-i18n="sight7">周氏微雕馆</span>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <h3 class="info-section-title" data-i18n="infoDeclarationTitle">参赛与版权声明</h3>
+            <p class="info-section-body" data-i18n="infoDeclarationBody">
+              本作品为闵行区“心动闵行·记录美好”网络作品征集活动（主题一：烟火闵行）参赛作品。手绘风矢量示意地图、印章视觉与交互代码由项目组原创制作；字体调用设备原生系统字族；互动音效与江南氛围音基于 Web Audio API 实时程序化合成，无第三方版权纠纷。
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3 class="info-section-title" data-i18n="infoCreditsTitle">关于《集七宝》</h3>
+            <p class="info-section-body" data-i18n="infoCreditsBody">
+              穿行于七宝古镇千年历史脉络，记录蒲汇塘两岸真实的市井烟火与水乡生活温度。
+            </p>
+            <button class="btn-reset-data" id="btn-info-reset-progress" data-i18n="infoResetProgress">
+              重置集章进度
+            </button>
+          </div>
+        </section>
+
+        <!-- Fullscreen Stamping Overlay Animation -->
+        <div class="stamp-anim-container" id="stamp-animation-overlay">
+          <div class="stamp-badge-visual">
+            <span>宝</span>
+            <span class="stamp-badge-sub" id="stamp-badge-spot-title">钟楼</span>
+          </div>
+        </div>
+
+        <!-- Toast Notification Bar -->
+        <div class="toast-notice" id="toast-notice"></div>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>
