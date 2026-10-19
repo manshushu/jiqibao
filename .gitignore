@@ -1,0 +1,13 @@
+node_modules/
+.vite/
+coverage/
+test-results/
+playwright-report/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# dist/ is intentionally tracked for direct static deployment.

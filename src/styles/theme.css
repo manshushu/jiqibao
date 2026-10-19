@@ -1,0 +1,40 @@
+:root {
+  /* Spec 5.2 Color Palette */
+  --paper: #F4EDE1;
+  --paper-card: #FCF8F2;
+  --paper-subtle: #ECE4D6;
+  --ink: #2F3E46;
+  --ink-light: #596D76;
+  --ink-muted: #8598A0;
+  --vermilion: #B5352B;
+  --vermilion-dark: #91271F;
+  --vermilion-light: #D9534F;
+  --vermilion-glow: rgba(181, 53, 43, 0.25);
+  --water: #5E8B7E;
+  --water-light: #8BAFA5;
+  --water-dark: #466960;
+  --lantern: #E0A030;
+  --lantern-glow: rgba(224, 160, 48, 0.35);
+  --night: #1D2A30;
+  --night-card: #283840;
+
+  /* Typography */
+  --font-serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+  --font-sans: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+
+  /* Geometry & Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(47, 62, 70, 0.08);
+  --shadow-md: 0 6px 18px rgba(47, 62, 70, 0.12);
+  --shadow-lg: 0 12px 32px rgba(47, 62, 70, 0.18);
+  --shadow-drawer: 0 -8px 30px rgba(29, 42, 48, 0.22);
+
+  /* Animation Timings */
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+}

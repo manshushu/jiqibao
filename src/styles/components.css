@@ -1,0 +1,403 @@
+/* SVG Map Hotspots */
+.svg-map-hotspot {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center center;
+}
+
+.svg-map-hotspot:hover {
+  filter: brightness(1.1);
+}
+
+.svg-map-hotspot:active {
+  transform-origin: center center;
+  filter: brightness(0.95);
+}
+
+/* Pulsing Wave on Uncollected Spots */
+.svg-map-hotspot.uncollected .hotspot-ping-wave {
+  animation: svg-ping 2.2s infinite ease-in-out;
+  transform-origin: 0 0;
+}
+
+@keyframes svg-ping {
+  0% {
+    r: 20px;
+    fill-opacity: 0.5;
+  }
+  50% {
+    r: 34px;
+    fill-opacity: 0.1;
+  }
+  100% {
+    r: 20px;
+    fill-opacity: 0.5;
+  }
+}
+
+/* Stamping Overlay Animation */
+.stamp-anim-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 100;
+  display: none;
+}
+
+.stamp-anim-container.active {
+  display: block;
+}
+
+.stamp-badge-visual {
+  width: 140px;
+  height: 140px;
+  border: 5px solid var(--vermilion);
+  border-radius: 20px;
+  color: var(--vermilion);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 30px rgba(181, 53, 43, 0.4);
+  animation: stamp-thud 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.stamp-badge-sub {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+@keyframes stamp-thud {
+  0% {
+    opacity: 0;
+    transform: scale(3) rotate(-25deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.92) rotate(4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-6deg);
+  }
+}
+
+/* Toast Message */
+.toast-notice {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 14px) + 70px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: rgba(29, 42, 48, 0.94);
+  color: #FFF;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  white-space: normal;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* =========================================
+   P1 Micro-Interactions Component Styles
+   ========================================= */
+
+/* 1. Bell Tower */
+.micro-bell-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.bell-visual-wrap {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.bell-visual-wrap:hover {
+  transform: scale(1.06);
+}
+
+.bell-icon-svg {
+  width: 64px;
+  height: 64px;
+  transform-origin: top center;
+  transition: transform 0.1s ease;
+}
+
+.bell-icon-svg.ringing {
+  animation: bell-swing 0.8s ease-in-out;
+}
+
+@keyframes bell-swing {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(18deg); }
+  40% { transform: rotate(-14deg); }
+  60% { transform: rotate(8deg); }
+  80% { transform: rotate(-4deg); }
+}
+
+.bell-ripple {
+  position: absolute;
+  border: 2px solid var(--lantern);
+  border-radius: var(--radius-full);
+  animation: ripple-out 1s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple-out {
+  0% { width: 20px; height: 20px; opacity: 0.9; }
+  100% { width: 160px; height: 160px; opacity: 0; }
+}
+
+/* 2. Sugar Painting */
+.micro-sugar-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sugar-template-bar {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 8px;
+}
+
+.sugar-tpl-btn {
+  flex: 1;
+  min-height: 44px;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper-card);
+  border: 1px solid rgba(47, 62, 70, 0.18);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.sugar-tpl-btn.active {
+  background: var(--vermilion);
+  color: #FFF;
+  border-color: var(--vermilion);
+}
+
+.sugar-canvas-wrap {
+  width: 100%;
+  max-width: 320px;
+  height: 160px;
+  background: #3B4B52;
+  border-radius: var(--radius-sm);
+  position: relative;
+  touch-action: none;
+  cursor: crosshair;
+  overflow: hidden;
+}
+
+.sugar-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sugar-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 6px;
+  gap: 8px;
+}
+
+.sugar-hint-text {
+  font-size: 12px;
+  color: var(--ink-light);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.sugar-reset-btn {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--vermilion);
+  background: var(--paper-card);
+  border: 1px solid rgba(181, 53, 43, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  min-height: 44px;
+  min-width: 68px;
+}
+
+/* 3. Steam particles for Mutton and Sweets */
+.micro-steam-box {
+  width: 100%;
+  height: 140px;
+  background: #EAE2D3;
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.micro-steam-box:hover {
+  background: #E4DBCB;
+}
+
+.steam-dish-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steam-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* 4. Shadow Puppet drag stage */
+.micro-puppet-box {
+  width: 100%;
+  height: 160px;
+  background: radial-gradient(circle at center, #FFFDEB 0%, #D8CEB8 100%);
+  border: 4px solid #6E533F;
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.puppet-actor {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 110px;
+  cursor: grab;
+  user-select: none;
+}
+
+.puppet-actor:active {
+  cursor: grabbing;
+}
+
+/* 5. Puhuitang Bridge water ripple & gliding boat */
+.micro-bridge-box,
+.micro-modern-box {
+  width: 100%;
+  height: 135px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(47, 62, 70, 0.14);
+}
+
+.bridge-ripple-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bridge-water-ripple {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  animation: bridge-ripple-expand 1s ease-out forwards;
+}
+
+@keyframes bridge-ripple-expand {
+  0% {
+    width: 12px;
+    height: 5px;
+    opacity: 0.95;
+  }
+  100% {
+    width: 130px;
+    height: 36px;
+    opacity: 0;
+  }
+}
+
+.micro-modern-box .modern-sky-bg {
+  transition: fill 0.45s ease;
+}
+
+.micro-modern-box .modern-window-light,
+.micro-modern-box .modern-glow-orb {
+  transition: all 0.45s ease;
+}
+
+.micro-modern-box.illuminated .modern-sky-bg {
+  fill: #24333B;
+}
+
+.micro-modern-box.illuminated .modern-window-light {
+  fill: #F5C35A;
+}
+
+.micro-modern-box.illuminated .modern-glow-orb {
+  fill-opacity: 0.28;
+}
+
+.micro-overlay-hint {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+.micro-overlay-hint span {
+  font-size: 11.5px;
+  color: #3D4E55;
+  background: rgba(255, 253, 249, 0.86);
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+

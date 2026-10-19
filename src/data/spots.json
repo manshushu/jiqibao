@@ -1,0 +1,233 @@
+[
+  {
+    "id": "bell-tower",
+    "order": 1,
+    "map": { "x": 25, "y": 32 },
+    "name": {
+      "zh": "钟楼",
+      "en": "Bell Tower"
+    },
+    "summary": {
+      "zh": "古镇的标志性建筑；传说中七宝之一的“氽来钟”就藏在这里。撞一声沉郁洪钟，悠远钟声回荡在蒲汇塘两岸。",
+      "en": "A historic landmark of the ancient town; legend says the Floating Bell, one of the seven ancient relics, rests inside. Strike the bronze bell and let its deep chime echo across both banks of Puhuitang River."
+    },
+    "tags": {
+      "zh": ["氽来钟", "标志性建筑", "晨钟悠扬"],
+      "en": ["Floating Bell", "Landmark", "Morning Chime"]
+    },
+    "media": {
+      "image": "assets/img/spots/bell-tower.webp",
+      "fallbackImage": "assets/img/spots/bell-tower.jpg",
+      "video": null,
+      "audio": "assets/audio/bell-tower.mp3"
+    },
+    "quote": {
+      "zh": "氽来钟，飞来佛，金字莲花经，神树金鸡玉筷斧。",
+      "en": "Floating Bell, Flying Buddha, Golden Lotus Sutra, Sacred Tree, Golden Rooster, Jade Chopsticks and Axe.",
+      "author": {
+        "zh": "七宝民间传统口诀",
+        "en": "Traditional Folk Rhyme of Qibao"
+      }
+    },
+    "special": "bell",
+    "verified": true
+  },
+  {
+    "id": "puhuitang-bridge",
+    "order": 2,
+    "map": { "x": 50, "y": 50 },
+    "name": {
+      "zh": "蒲汇塘桥",
+      "en": "Puhuitang Bridge"
+    },
+    "summary": {
+      "zh": "建于明正德十三年（1518年），已逾五百年历史。三孔石拱跨越蒲汇塘，南北大街以此为轴，形成了老街“非”字形的水乡格局。",
+      "en": "Built in 1518 during the Ming dynasty, this five-century-old three-arch stone bridge spans the Puhuitang River, forming the central axis that divides North and South Streets into a classic water-town layout."
+    },
+    "tags": {
+      "zh": ["明代石拱桥", "五百年老桥", "老街中轴"],
+      "en": ["Ming Dynasty Bridge", "500 Years Old", "Town Axis"]
+    },
+    "media": {
+      "image": "assets/img/spots/puhuitang-bridge.webp",
+      "fallbackImage": "assets/img/spots/puhuitang-bridge.jpg",
+      "video": null,
+      "audio": "assets/audio/puhuitang-bridge.mp3"
+    },
+    "quote": {
+      "zh": "杨柳披烟看帆影如画，鸬鹚映雨听橹声似歌。",
+      "en": "Willows veiled in mist frame sails like a painting; cormorants in the rain echo with oars like a song.",
+      "author": {
+        "zh": "蒲汇塘桥石刻楹联",
+        "en": "Stone Couplet on Puhuitang Bridge"
+      }
+    },
+    "special": "bridge",
+    "verified": true
+  },
+  {
+    "id": "sliced-mutton",
+    "order": 3,
+    "map": { "x": 25, "y": 65 },
+    "name": {
+      "zh": "白切羊肉",
+      "en": "Sliced Mutton"
+    },
+    "summary": {
+      "zh": "八仙桌、长条凳，一盆肉质细嫩的白切羊肉，配一杯老酒或热茶，是老街居民延续至今的生活方式；街巷里还有干蒸圆子等传统吃食。",
+      "en": "Around wooden Eight-Immortals tables and long benches, a plate of tender sliced mutton paired with local wine or hot tea remains a cherished daily ritual, alongside steamed glutinous dumplings and savory street fare."
+    },
+    "tags": {
+      "zh": ["白切羊肉", "干蒸圆子", "早酒热茶"],
+      "en": ["Sliced Mutton", "Steamed Dumplings", "Morning Tea"]
+    },
+    "media": {
+      "image": "assets/img/spots/sliced-mutton.webp",
+      "fallbackImage": "assets/img/spots/sliced-mutton.jpg",
+      "video": null,
+      "audio": "assets/audio/sliced-mutton.mp3"
+    },
+    "quote": {
+      "zh": "一碟白切羊肉配一盏热茶，在老街临河的木桌旁坐定，便是水乡清晨最踏实的日常。",
+      "en": "A plate of sliced mutton with a cup of hot tea by the riverside window is the most grounded morning ritual of the water town.",
+      "author": {
+        "zh": "七宝老街早茶食俗",
+        "en": "Qibao Morning Tea Custom"
+      }
+    },
+    "special": "steam",
+    "verified": true
+  },
+  {
+    "id": "sweet-snacks",
+    "order": 4,
+    "map": { "x": 50, "y": 79 },
+    "name": {
+      "zh": "老味道点心",
+      "en": "Old-Time Sweets"
+    },
+    "summary": {
+      "zh": "铜模具烘出的海棠糕焦香温热，大锅沸水里翻滚的七宝汤圆与七宝方糕软糯甜润，串联起老街南大街代代相传的甜蜜记忆。",
+      "en": "Freshly baked Begonia cakes with caramelized crusts, alongside steaming Qibao glutinous rice balls and traditional square rice cakes, carry the enduring sweet memories of South Street through generations of visitors."
+    },
+    "tags": {
+      "zh": ["七宝方糕", "七宝汤圆", "海棠糕"],
+      "en": ["Square Rice Cake", "Tangyuan", "Begonia Cake"]
+    },
+    "media": {
+      "image": "assets/img/spots/sweet-snacks.webp",
+      "fallbackImage": "assets/img/spots/sweet-snacks.jpg",
+      "video": null,
+      "audio": "assets/audio/sweet-snacks.mp3"
+    },
+    "quote": {
+      "zh": "蒸笼掀开时白雾升腾，现包现煮的汤团与方糕，裹着江南人岁时节令里的甜润期盼。",
+      "en": "When the bamboo steamer lifts in a cloud of white mist, freshly made rice cakes and tangyuan carry the sweet wishes of Jiangnan seasons.",
+      "author": {
+        "zh": "南大街传统茶点风物志",
+        "en": "South Street Pastry Lore"
+      }
+    },
+    "special": "steam",
+    "verified": true
+  },
+  {
+    "id": "handicraft",
+    "order": 5,
+    "map": { "x": 75, "y": 65 },
+    "name": {
+      "zh": "手艺摊",
+      "en": "Handicraft Stalls"
+    },
+    "summary": {
+      "zh": "小铜勺作笔、温热糖浆作墨，转瞬间在石板上绘出游龙锦鲤；街巷间还汇聚了面塑、剪纸、龙凤字等非遗手艺与团扇手作体验。",
+      "en": "With a bronze ladle as a brush and molten sugar as ink, golden dragons and koi fish take shape on stone slabs, alongside dough modeling, paper cutting, calligraphy, and fan-painting crafts."
+    },
+    "tags": {
+      "zh": ["非遗糖画", "面塑剪纸", "团扇体验"],
+      "en": ["Sugar Painting", "Dough & Paper Art", "DIY Fan"]
+    },
+    "media": {
+      "image": "assets/img/spots/handicraft.webp",
+      "fallbackImage": "assets/img/spots/handicraft.jpg",
+      "video": null,
+      "audio": "assets/audio/handicraft.mp3"
+    },
+    "quote": {
+      "zh": "以勺为笔、以糖为墨，手腕轻转间必须一气呵成，赶在糖丝冷却前定格龙凤麟羽。",
+      "en": "With a ladle as brush and molten sugar as ink, every stroke must flow in a single breath before the amber threads cool.",
+      "author": {
+        "zh": "传统糖画技艺要诀",
+        "en": "Traditional Sugar-Painting Craft Lore"
+      }
+    },
+    "special": "sugar",
+    "verified": true
+  },
+  {
+    "id": "shadow-puppet",
+    "order": 6,
+    "map": { "x": 24, "y": 16 },
+    "name": {
+      "zh": "皮影馆",
+      "en": "Shadow Puppet Theatre"
+    },
+    "summary": {
+      "zh": "老街上的七宝皮影艺术馆内，白绢幕后琴锣齐鸣，刻绘精巧的皮影人物在暖黄光影中腾挪起伏，演绎着水乡流传已久的民间故事。",
+      "en": "Inside the Qibao Shadow Puppet Museum on the old street, behind translucent silk screens and traditional gongs, finely carved leather figures dance in warm light to enact classic folk tales."
+    },
+    "tags": {
+      "zh": ["江南皮影戏", "戏台光影", "非遗传承"],
+      "en": ["Shadow Theatre", "Light & Shadow", "Folk Heritage"]
+    },
+    "media": {
+      "image": "assets/img/spots/shadow-puppet.webp",
+      "fallbackImage": "assets/img/spots/shadow-puppet.jpg",
+      "video": null,
+      "audio": "assets/audio/shadow-puppet.mp3"
+    },
+    "quote": {
+      "zh": "一口道尽千古事，双手对舞百万兵。",
+      "en": "A single voice narrates a thousand years of tales; two hands command a million soldiers across the lit screen.",
+      "author": {
+        "zh": "传统皮影戏台楹联",
+        "en": "Classic Shadow Theatre Couplet"
+      }
+    },
+    "special": "puppet",
+    "verified": true
+  },
+  {
+    "id": "new-qibao",
+    "order": 7,
+    "map": { "x": 75, "y": 17 },
+    "name": {
+      "zh": "新七宝",
+      "en": "New Qibao"
+    },
+    "summary": {
+      "zh": "老街旁是七宝万科广场、宝龙城与宝龙美术馆，传统水乡文脉与现代艺术展、潮流市集在此并置，展现出新潮好玩的闵行活力。",
+      "en": "Right beside the ancient town stand Qibao Vanke Plaza, Powerlong City, and Powerlong Art Museum, where contemporary exhibitions and vibrant markets meet historic waterways, showcasing the creative energy of Minhang."
+    },
+    "tags": {
+      "zh": ["万科宝龙商圈", "宝龙美术馆", "新旧并置"],
+      "en": ["Modern Plazas", "Powerlong Art", "Old Meets New"]
+    },
+    "media": {
+      "image": "assets/img/spots/new-qibao.webp",
+      "fallbackImage": "assets/img/spots/new-qibao.jpg",
+      "video": null,
+      "audio": "assets/audio/new-qibao.mp3"
+    },
+    "quote": {
+      "zh": "青瓦飞檐与当代美术馆隔街相望，千年古镇的慢时光与闵行新城区的活力在此自然相接。",
+      "en": "Grey-tiled eaves face contemporary art galleries across the street, where the unhurried pace of an ancient town meets the energy of modern Minhang.",
+      "author": {
+        "zh": "七宝古今交融漫步记",
+        "en": "Qibao Old-Meets-New Walk Note"
+      }
+    },
+    "special": "modern",
+    "verified": true
+  }
+]
